@@ -47,6 +47,13 @@ const restaurants = [
   { name: "Restaurant next to that", cuisine: "Restrobar and Night Pub", rating: "3.1", image: restaurantWarm },
 ];
 
+const initialRestaurant = restaurants[0] ?? {
+  name: "Restaurant at This Street",
+  cuisine: "Mughlai and Arabian",
+  rating: "4.3",
+  image: restaurantWarm,
+};
+
 const dishes = [
   { name: "Mughlai Lasees Kebabs", detail: "Serves 4", price: "1199/-", image: indianSpread },
   { name: "Andhra Chicken Biryani", detail: "Family Pack", price: "1399/-", image: biryani },
@@ -68,7 +75,7 @@ function TopBar({ title, cart = false }: { title: string; cart?: boolean }) {
 
 function Index() {
   const [category, setCategory] = useState("Rice and Biryani");
-  const [restaurant, setRestaurant] = useState(restaurants[0]);
+  const [restaurant, setRestaurant] = useState(initialRestaurant);
   const [search, setSearch] = useState("");
   const [cartCount, setCartCount] = useState(1);
   const [ordered, setOrdered] = useState(false);
