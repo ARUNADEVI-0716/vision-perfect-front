@@ -176,3 +176,9 @@
     radial-gradient(circle at 40px 38px, color-mix(in oklab, var(--primary) 6%, transparent) 6px, transparent 7px);
   background-size: 54px 54px;
 }
+
+@utility restaurant-backdrop {
+  background-image: linear-gradient(color-mix(in oklab, var(--foreground) 35%, transparent), color-mix(in oklab, var(--foreground) 35%, transparent)), url("./assets/restaurant-warm.jpg");
+  background-position: center;
+  background-size: cover;
+}
