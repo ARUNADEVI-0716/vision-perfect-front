@@ -63,6 +63,8 @@ const restaurants = [
   { id: "next", name: "Restaurant next to that", cuisine: "Restrobar and Night Pub", rating: "3.1", image: restaurantWarm },
 ] as const;
 
+type Restaurant = (typeof restaurants)[number];
+
 const initialRestaurant = restaurants[0] ?? {
   id: "this-street",
   name: "Restaurant at This Street",
@@ -127,7 +129,7 @@ function TopBar({ title, cartCount, onCart }: { title: string; cartCount?: numbe
 function Index() {
   const scheduleRef = useRef<HTMLElement>(null);
   const [category, setCategory] = useState<string>("Rice and Biryani");
-  const [restaurant, setRestaurant] = useState(initialRestaurant);
+  const [restaurant, setRestaurant] = useState<Restaurant>(initialRestaurant);
   const [globalSearch, setGlobalSearch] = useState("");
   const [menuSearch, setMenuSearch] = useState("");
   const [cart, setCart] = useState<Cart>({ kebabs: 1 });
